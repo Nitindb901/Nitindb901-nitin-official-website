@@ -4,12 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio | Nitin Dubey</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {margin:0; padding:0; height:100%; font-family:sans-serif; background:#0b1220; color:white;}
+    .nav {position:sticky; top:0; background:rgba(0,0,0,0.6); padding:10px; z-index:10;}
+    .nav-inner {display:flex; justify-content:space-between; align-items:center; max-width:1100px; margin:auto;}
+    .brand {font-weight:bold; background:#7c3aed; padding:8px 12px; border-radius:6px; color:white; text-decoration:none;}
+    .links a {color:white; margin-left:15px; text-decoration:none;}
+    .hero {position:relative; min-height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden;}
+    .hero-inner {position:relative; z-index:2;}
+    footer {background:#111; padding:15px; text-align:center; color:#aaa;}
+
+    /* Slideshow */
+    .slideshow-container {position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden;}
+    .mySlides {display:none; height:100%;}
+    .slide-img {width:100%; height:100vh; object-fit:cover;}
+
+    /* Code Rain Canvas */
+    #codeRain {position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; mix-blend-mode:screen; opacity:0.4;}
+
+    /* Skills Scroll Banner */
+    .skills-scroll {position:absolute; bottom:10px; width:100%; overflow:hidden; background:rgba(0,0,0,0.6); z-index:3;}
+    .skills-scroll p {display:inline-block; white-space:nowrap; color:#22d3ee; font-weight:bold; animation:scrollText 20s linear infinite;}
+    @keyframes scrollText {0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+
+    /* Dashboard Grid */
+    .about {padding:50px 0; max-width:1100px; margin:auto;}
+    .grid-3 {display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .shot {background:#0e1626; border:1px solid #1f2a40; border-radius:12px; overflow:hidden; text-align:center;}
+    .shot img {width:100%; display:block;}
+    .shot figcaption {padding:10px; color:#9da7b3; font-size:14px;}
+  </style>
 </head>
 <body>
   <!-- NAV -->
   <header class="nav">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a class="brand" href="./">ND</a>
       <nav class="links">
         <a href="./">Home</a>
@@ -23,21 +52,30 @@
   <!-- HERO SLIDESHOW -->
   <section class="hero">
     <div class="slideshow-container">
-      <div class="mySlides fade"><img src="Image1.png" class="slide-img" alt="Portfolio Image 1"></div>
-      <div class="mySlides fade"><img src="Image2.png" class="slide-img" alt="Portfolio Image 2"></div>
-      <div class="mySlides fade"><img src="Image3.png" class="slide-img" alt="Portfolio Image 3"></div>
-      <div class="mySlides fade"><img src="Image4.png" class="slide-img" alt="Portfolio Image 4"></div>
-      <div class="mySlides fade"><img src="NItin dubey Proffessional photo FOR FIVVER.png" class="slide-img" alt="Professional Photo"></div>
+      <div class="mySlides fade"><img src="Image1.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image2.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image3.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image4.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="NItin dubey Proffessional photo FOR FIVVER.png" class="slide-img"></div>
     </div>
 
-    <div class="container hero-inner">
+    <!-- Code Rain Layer -->
+    <canvas id="codeRain"></canvas>
+
+    <!-- Hero Content -->
+    <div class="hero-inner">
       <h1>My Work Showcase</h1>
       <p class="subtitle">Dashboards • Data Analytics • Visualization</p>
+    </div>
+
+    <!-- Skills Scroll Banner -->
+    <div class="skills-scroll">
+      <p>🌐 Website Development • 📱 App Development • 🤖 AI Tools • 📊 Data Science • ⚡ Power BI • 📈 Tableau • 🔮 Machine Learning • 🛠️ Automation</p>
     </div>
   </section>
 
   <!-- DASHBOARD GRID -->
-  <section class="container about">
+  <section class="about">
     <h2>Dashboards & Projects</h2>
     <div class="grid-3">
       <figure class="shot"><img src="assets/projects/dashboard1.png" alt=""><figcaption>Retail KPI Overview</figcaption></figure>
@@ -49,23 +87,52 @@
     </div>
   </section>
 
-  <footer class="footer"><div class="container"><p>© 2025 Nitin Dubey</p></div></footer>
+  <footer><p>© 2025 Nitin Dubey</p></footer>
 
-  <!-- Slideshow Script -->
+  <!-- JS for Slideshow -->
   <script>
     let slideIndex = 0;
     showSlides();
-
     function showSlides() {
       let slides = document.getElementsByClassName("mySlides");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
+      for (let i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3000); // Change image every 3 sec
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
     }
+  </script>
+
+  <!-- JS for Code Rain -->
+  <script>
+    const canvas = document.getElementById("codeRain");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const keywords = ["HTML","CSS","Python","R","SQL","Power Query","AI","Apps","Automation"];
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#22d3ee";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = keywords[Math.floor(Math.random() * keywords.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 80);
+
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
   </script>
 </body>
 </html>
