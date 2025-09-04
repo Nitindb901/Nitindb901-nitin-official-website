@@ -1,24 +1,24 @@
-# Personal Portfolio - Nitin Dubey
+# 🌐 Nitin Dubey — Data Analyst & Data Scientist
 
-This is the personal portfolio website of **Nitin Dubey** (Data Analyst, Data Scientist & MIS Coordinator).
+Interactive portfolio with:
 
-## 🚀 Features
-- Profile photo in hero section
-- Animated slideshow background with dashboards
-- Resume download (PDF)
-- WhatsApp buttons with two numbers
-- LinkedIn correct link
-- Certificates (PDF)
-- Portfolio page with slideshow + grid of dashboards
+- Profile photo (`profile.png`)
+- Animated background slideshow (dashboards)
+- Code rain animation (HTML, CSS, Python, R, SQL, DAX)
+- Resume download (`resume.pdf`)
+- Certificates view (`certificates.pdf`)
+- WhatsApp buttons (7772011682 & 8462011346)
+- LinkedIn link
 
-## 📂 File Structure
-index.html       → Homepage
-portfolio.html   → Projects showcase
-style.css        → Styling & animations
-assets/          → Profile, Resume, Dashboards, Certificates
+---
 
-## 🛠️ Technologies Used
-- HTML5  
-- CSS3 (Flexbox, Grid, Animations)  
-- JavaScript (slideshow)  
-- GitHub Pages for hosting
+## 🚀 Live with GitHub Pages
+1. Push repo to GitHub.  
+2. Go to **Settings → Pages**.  
+3. Select **Branch = main** and **/ (root)**.  
+4. Save → Site will be live at:  
+   `https://your-username.github.io/your-repo-name`
+
+---
+
+## 📂 Structure
