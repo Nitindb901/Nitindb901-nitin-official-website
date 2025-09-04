@@ -1,85 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nitin Dubey - Data Analyst, Data Scientist & MIS Coordinator Portfolio">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nitin Dubey | Data Analyst & Data Scientist</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portfolio of Nitin Dubey — Data Analyst, Data Scientist & MIS Coordinator. Power BI, Tableau, Python, SQL, Dashboards." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <h1>Nitin Dubey</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="assets/certificates/All Certificates.pdf" target="_blank">Certificates</a></li>
-      </ul>
-    </nav>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./">ND</a>
+      <nav class="links">
+        <a href="./">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="assets/resume.pdf" download>Download Resume</a>
+        <a href="assets/certificates.pdf" target="_blank">View Certificates</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section with Slideshow -->
-  <section class="hero">
-    <div class="slideshow">
-      <img src="assets/projects/dashboard1.png" class="slide active">
-      <img src="assets/projects/dashboard2.png" class="slide">
-      <img src="assets/projects/dashboard3.png" class="slide">
-      <img src="assets/projects/dashboard4.png" class="slide">
-      <img src="assets/projects/dashboard5.png" class="slide">
-      <img src="assets/projects/dashboard6.png" class="slide">
-    </div>
-    <div class="overlay">
-      <img src="assets/profile.png" alt="Nitin Dubey" class="profile-pic">
-      <h2>Data Analyst | Data Scientist | MIS Coordinator</h2>
-      <p>10+ years of experience transforming raw data into actionable insights using Power BI, Python, SQL & AI-powered tools.</p>
-      <div class="hero-buttons">
-        <a href="assets/resume.pdf" target="_blank" class="btn">📄 Download Resume</a>
-        <a href="https://wa.me/7772011682" class="btn">💬 WhatsApp (7772011682)</a>
-        <a href="https://wa.me/8462011346" class="btn">💬 WhatsApp (8462011346)</a>
-        <a href="https://www.linkedin.com/in/nitin-dubey-48249aa1" target="_blank" class="btn">🔗 LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="skills">
-    <h2>Core Skills</h2>
-    <div class="skills-grid">
-      <span>Power BI</span>
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Tableau</span>
-      <span>Machine Learning</span>
-      <span>Cloud BI</span>
-      <span>Excel (Advanced)</span>
-      <span>AI Dashboards</span>
-    </div>
-  </section>
-
-  <!-- Certificates -->
-  <section class="certificates">
-    <h2>Certificates</h2>
-    <p>Certified in Power BI, Python, SQL, Tableau, Machine Learning & AI Dashboards.</p>
-    <a href="assets/certificates/All Certificates.pdf" target="_blank" class="btn">📜 View Certificates</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Nitin Dubey | Data Analyst & Data Scientist</p>
-  </footer>
-
-  <script>
-    // Slideshow JS
-    let slides = document.querySelectorAll('.slide');
-    let index = 0;
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 4000);
-  </script>
-</body>
-</html>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="scrim"></div>
+    <div class="bg-rota
