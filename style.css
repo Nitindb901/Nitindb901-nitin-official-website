@@ -1,0 +1,38 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; color: #fff; background: #0e0e0e; }
+
+/* Navbar */
+header { background: rgba(0,0,0,0.7); padding: 1rem; position: sticky; top: 0; z-index: 10; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav h1 { font-size: 1.5rem; }
+nav ul { display: flex; list-style: none; gap: 1rem; }
+nav a { color: #fff; text-decoration: none; transition: color 0.3s; }
+nav a:hover { color: #00eaff; }
+
+/* Hero Section with Slideshow */
+.hero { position: relative; height: 100vh; overflow: hidden; }
+.slideshow, .project-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.slide, .p-slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
+.slide.active, .p-slide.active { opacity: 0.5; }
+.overlay { position: relative; z-index: 2; text-align: center; padding-top: 10%; }
+.profile-pic { width: 160px; border-radius: 50%; border: 3px solid #00eaff; margin-bottom: 1rem; }
+.overlay h2 { font-size: 2rem; margin: 1rem 0; }
+.overlay p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+.btn { display: inline-block; margin: 0.5rem; padding: 0.7rem 1.2rem; border-radius: 30px; background: #00eaff; color: #000; text-decoration: none; transition: transform 0.3s; }
+.btn:hover { transform: scale(1.05); }
+
+/* Skills */
+.skills { padding: 2rem; text-align: center; background: rgba(0,0,0,0.6); }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.skills-grid span { background: #222; padding: 0.5rem 1rem; border-radius: 20px; }
+
+/* Portfolio */
+.portfolio { padding: 2rem; text-align: center; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.project-card { background: #111; padding: 1rem; border-radius: 10px; transition: transform 0.3s; }
+.project-card img { width: 100%; border-radius: 10px; }
+.project-card:hover { transform: scale(1.05); }
+
+/* Footer */
+footer { text-align: center; padding: 1rem; background: rgba(0,0,0,0.8); margin-top: 2rem; }

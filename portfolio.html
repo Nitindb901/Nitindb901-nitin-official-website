@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Nitin Dubey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Portfolio</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Projects -->
+  <section class="portfolio">
+    <h2>My Dashboards & Projects</h2>
+    <div class="project-slideshow">
+      <img src="assets/projects/dashboard1.png" class="p-slide active">
+      <img src="assets/projects/dashboard2.png" class="p-slide">
+      <img src="assets/projects/dashboard3.png" class="p-slide">
+      <img src="assets/projects/dashboard4.png" class="p-slide">
+      <img src="assets/projects/dashboard5.png" class="p-slide">
+      <img src="assets/projects/dashboard6.png" class="p-slide">
+    </div>
+    <div class="project-grid">
+      <div class="project-card"><img src="assets/projects/dashboard1.png" alt="Dashboard 1"></div>
+      <div class="project-card"><img src="assets/projects/dashboard2.png" alt="Dashboard 2"></div>
+      <div class="project-card"><img src="assets/projects/dashboard3.png" alt="Dashboard 3"></div>
+      <div class="project-card"><img src="assets/projects/dashboard4.png" alt="Dashboard 4"></div>
+      <div class="project-card"><img src="assets/projects/dashboard5.png" alt="Dashboard 5"></div>
+      <div class="project-card"><img src="assets/projects/dashboard6.png" alt="Dashboard 6"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nitin Dubey | Portfolio</p>
+  </footer>
+
+  <script>
+    // Portfolio slideshow
+    let pSlides = document.querySelectorAll('.p-slide');
+    let pIndex = 0;
+    setInterval(() => {
+      pSlides[pIndex].classList.remove('active');
+      pIndex = (pIndex + 1) % pSlides.length;
+      pSlides[pIndex].classList.add('active');
+    }, 4000);
+  </script>
+</body>
+</html>
