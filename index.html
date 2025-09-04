@@ -24,4 +24,86 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="scrim"></div>
-    <div class="bg-rota
+    <div class="bg-rotator" id="bgRotator"></div>
+
+    <div class="container hero-inner">
+      <img class="avatar" src="assets/profile.png" alt="Nitin Dubey profile photo" />
+      <h1>Hi, I’m <span>Nitin Dubey</span></h1>
+      <p class="subtitle">Data Analyst • Data Scientist • MIS Coordinator</p>
+      <p class="badges">
+        <span>HTML</span><span>CSS</span><span>Python</span><span>R</span>
+        <span>SQL</span><span>Power BI</span><span>Tableau</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="assets/resume.pdf" download>⬇️ Download Resume</a>
+        <a class="btn" href="assets/certificates.pdf" target="_blank">📜 View Certificates</a>
+        <a class="btn whats" href="https://wa.me/7772011682">WhatsApp: 7772011682</a>
+        <a class="btn whats" href="https://wa.me/8462011346">WhatsApp: 8462011346</a>
+        <a class="btn linkd" href="https://www.linkedin.com/in/nitin-dubey-48249aa1" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Code rain -->
+    <canvas id="codeRain" aria-hidden="true"></canvas>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="container about">
+    <h2>About Me</h2>
+    <p>
+      Data-driven retail strategist with 10+ years of experience turning raw data into
+      business insights. I design interactive dashboards (Power BI & Tableau), build
+      analytics in Python/R, automate MIS reporting, and help teams take action fast.
+    </p>
+    <div class="grid-3">
+      <div class="card"><h3>Dashboards</h3><p>Power BI, Tableau, KPI tracking, Sales & Inventory.</p></div>
+      <div class="card"><h3>Analytics</h3><p>Python, SQL, Forecasting, Segmentation.</p></div>
+      <div class="card"><h3>Automation</h3><p>Power Query, ETL, AI-powered reporting.</p></div>
+    </div>
+  </section>
+
+  <!-- PREVIEW STRIP -->
+  <section class="preview">
+    <div class="container">
+      <h2>Recent Dashboards</h2>
+      <div class="strip">
+        <img src="assets/projects/dashboard1.png" alt="">
+        <img src="assets/projects/dashboard2.png" alt="">
+        <img src="assets/projects/dashboard3.png" alt="">
+        <img src="assets/projects/dashboard4.png" alt="">
+        <img src="assets/projects/dashboard5.png" alt="">
+        <img src="assets/projects/dashboard6.png" alt="">
+      </div>
+      <p class="center"><a class="btn primary" href="portfolio.html">See full portfolio →</a></p>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><p>© 2025 Nitin Dubey</p></div></footer>
+
+  <script>
+    // Background slideshow
+    const slides = [
+      "assets/projects/dashboard1.png",
+      "assets/projects/dashboard2.png",
+      "assets/projects/dashboard3.png",
+      "assets/projects/dashboard4.png",
+      "assets/projects/dashboard5.png",
+      "assets/projects/dashboard6.png",
+    ];
+    const rotator = document.getElementById('bgRotator');
+    let i = 0;
+    function showSlide(idx){ rotator.style.backgroundImage=`url('${slides[idx]}')`; rotator.classList.remove('fade-in'); void rotator.offsetWidth; rotator.classList.add('fade-in'); }
+    showSlide(i);
+    setInterval(()=>{ i=(i+1)%slides.length; showSlide(i); },3500);
+
+    // Code rain
+    const canvas=document.getElementById('codeRain'),ctx=canvas.getContext('2d');
+    function resize(){canvas.width=window.innerWidth;canvas.height=Math.max(600,window.innerHeight*0.9);} resize(); window.addEventListener('resize',resize);
+    const chars="01<>[]{}()=+-*/#%$&|^~;:,._ AI SQL PY R HTML CSS DAX".split("");
+    const fontSize=16;let columns=Math.floor(canvas.width/fontSize);let drops=Array(columns).fill(1);
+    function draw(){ctx.fillStyle="rgba(0,0,0,0.09)";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle="#7ee787";ctx.font=fontSize+"px monospace";
+      for(let x=0;x<drops.length;x++){const text=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(text,x*fontSize,drops[x]*fontSize);
+        if(drops[x]*fontSize>canvas.height&&Math.random()>0.975)drops[x]=0;drops[x]++;} requestAnimationFrame(draw);} draw();
+  </script>
+</body>
+</html>
