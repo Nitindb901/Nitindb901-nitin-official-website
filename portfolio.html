@@ -1,56 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Nitin Dubey</title>
+  <meta charset="="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Nitin Dubey</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Portfolio</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
-    </nav>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./">ND</a>
+      <nav class="links">
+        <a href="./">Home</a>
+        <a class="active" href="portfolio.html">Portfolio</a>
+        <a href="assets/resume.pdf" download>Download Resume</a>
+        <a href="assets/certificates.pdf" target="_blank">View Certificates</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Projects -->
-  <section class="portfolio">
-    <h2>My Dashboards & Projects</h2>
-    <div class="project-slideshow">
-      <img src="assets/projects/dashboard1.png" class="p-slide active">
-      <img src="assets/projects/dashboard2.png" class="p-slide">
-      <img src="assets/projects/dashboard3.png" class="p-slide">
-      <img src="assets/projects/dashboard4.png" class="p-slide">
-      <img src="assets/projects/dashboard5.png" class="p-slide">
-      <img src="assets/projects/dashboard6.png" class="p-slide">
-    </div>
-    <div class="project-grid">
-      <div class="project-card"><img src="assets/projects/dashboard1.png" alt="Dashboard 1"></div>
-      <div class="project-card"><img src="assets/projects/dashboard2.png" alt="Dashboard 2"></div>
-      <div class="project-card"><img src="assets/projects/dashboard3.png" alt="Dashboard 3"></div>
-      <div class="project-card"><img src="assets/projects/dashboard4.png" alt="Dashboard 4"></div>
-      <div class="project-card"><img src="assets/projects/dashboard5.png" alt="Dashboard 5"></div>
-      <div class="project-card"><img src="assets/projects/dashboard6.png" alt="Dashboard 6"></div>
+  <section class="container">
+    <h1>Projects & Dashboards</h1>
+    <div class="grid-3">
+      <figure class="shot"><img src="assets/projects/dashboard1.png" alt=""><figcaption>Retail KPI Overview</figcaption></figure>
+      <figure class="shot"><img src="assets/projects/dashboard2.png" alt=""><figcaption>Segment vs Region</figcaption></figure>
+      <figure class="shot"><img src="assets/projects/dashboard3.png" alt=""><figcaption>Category Deep-dive</figcaption></figure>
+      <figure class="shot"><img src="assets/projects/dashboard4.png" alt=""><figcaption>Brand Performance</figcaption></figure>
+      <figure class="shot"><img src="assets/projects/dashboard5.png" alt=""><figcaption>Seasonality Analysis</figcaption></figure>
+      <figure class="shot"><img src="assets/projects/dashboard6.png" alt=""><figcaption>Map + Sales</figcaption></figure>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Nitin Dubey | Portfolio</p>
-  </footer>
-
-  <script>
-    // Portfolio slideshow
-    let pSlides = document.querySelectorAll('.p-slide');
-    let pIndex = 0;
-    setInterval(() => {
-      pSlides[pIndex].classList.remove('active');
-      pIndex = (pIndex + 1) % pSlides.length;
-      pSlides[pIndex].classList.add('active');
-    }, 4000);
-  </script>
+  <footer class="footer"><div class="container"><p>© 2025 Nitin Dubey</p></div></footer>
 </body>
 </html>
