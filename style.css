@@ -1,38 +1,70 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; color: #fff; background: #0e0e0e; }
+:root{
+  --bg:#0b1220;
+  --ink:#e6edf3;
+  --muted:#9da7b3;
+  --brand:#7c3aed;
+  --accent:#22c55e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+img{max-width:100%;display:block}
 
-/* Navbar */
-header { background: rgba(0,0,0,0.7); padding: 1rem; position: sticky; top: 0; z-index: 10; }
-nav { display: flex; justify-content: space-between; align-items: center; }
-nav h1 { font-size: 1.5rem; }
-nav ul { display: flex; list-style: none; gap: 1rem; }
-nav a { color: #fff; text-decoration: none; transition: color 0.3s; }
-nav a:hover { color: #00eaff; }
+/* layout helpers */
+.container{width:min(1100px,92%);margin-inline:auto}
+.center{text-align:center}
+.space-top{margin-top:1.25rem}
 
-/* Hero Section with Slideshow */
-.hero { position: relative; height: 100vh; overflow: hidden; }
-.slideshow, .project-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.slide, .p-slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
-.slide.active, .p-slide.active { opacity: 0.5; }
-.overlay { position: relative; z-index: 2; text-align: center; padding-top: 10%; }
-.profile-pic { width: 160px; border-radius: 50%; border: 3px solid #00eaff; margin-bottom: 1rem; }
-.overlay h2 { font-size: 2rem; margin: 1rem 0; }
-.overlay p { font-size: 1.2rem; margin-bottom: 1.5rem; }
-.btn { display: inline-block; margin: 0.5rem; padding: 0.7rem 1.2rem; border-radius: 30px; background: #00eaff; color: #000; text-decoration: none; transition: transform 0.3s; }
-.btn:hover { transform: scale(1.05); }
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.8);backdrop-filter:blur(8px);border-bottom:1px solid #1f2a40}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.brand{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#3b82f6);color:white;font-weight:700;text-decoration:none}
+.links a{color:var(--ink);text-decoration:none;margin-left:1rem;opacity:.9}
+.links a:hover,.links a.active{color:white}
+@media (max-width:720px){.links{display:flex;flex-wrap:wrap;gap:.6rem}.links a{margin:0}}
 
-/* Skills */
-.skills { padding: 2rem; text-align: center; background: rgba(0,0,0,0.6); }
-.skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-.skills-grid span { background: #222; padding: 0.5rem 1rem; border-radius: 20px; }
+/* HERO */
+.hero{position:relative;min-height:92vh;display:grid;place-items:center;overflow:hidden}
+.hero .scrim{position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 40%, rgba(124,58,237,.25), transparent 60%), rgba(0,0,0,.35);z-index:1}
+.bg-rotator{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.8;filter:saturate(1.05) contrast(1.1) blur(1px);transform:scale(1.03)}
+.fade-in{animation:fade .9s ease}
+@keyframes fade{from{opacity:.1}to{opacity:.8}}
+#codeRain{position:absolute;inset:0;z-index:0;opacity:.35}
 
-/* Portfolio */
-.portfolio { padding: 2rem; text-align: center; }
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
-.project-card { background: #111; padding: 1rem; border-radius: 10px; transition: transform 0.3s; }
-.project-card img { width: 100%; border-radius: 10px; }
-.project-card:hover { transform: scale(1.05); }
+.hero-inner{position:relative;z-index:2;text-align:center}
+.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.7);box-shadow:0 10px 30px rgba(0,0,0,.35);margin:auto}
+h1{font-size:clamp(28px,4vw,44px);margin:14px 0 6px}
+h1 span{background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);margin:0 0 10px}
+.badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badges span{font-size:.85rem;padding:.3rem .55rem;border:1px solid #34435e;border-radius:999px;color:#cde2ff;background:rgba(52,67,94,.25)}
 
-/* Footer */
-footer { text-align: center; padding: 1rem; background: rgba(0,0,0,0.8); margin-top: 2rem; }
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:.9rem}
+.btn{border:1px solid #2b3b56;border-radius:12px;padding:.6rem .9rem;text-decoration:none;color:#e7eefc;background:#111827}
+.btn:hover{background:#0f172a}
+.btn.primary{background:linear-gradient(90deg,#7c3aed,#06b6d4);border-color:transparent}
+.btn.whats{border-color:#2e7d32}
+.btn.linkd{border-color:#0a66c2}
+
+.about{padding:50px 0}
+.grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.card{background:#0e1626;border:1px solid #1f2a40;border-radius:16px;padding:18px}
+.card h3{margin:.2rem 0 .4rem}
+.card p{color:var(--muted);margin:0}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+@media (min-width:901px) and (max-width:1150px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+
+/* preview strip */
+.preview{background:#0e1626;border-top:1px solid #1f2a40;border-bottom:1px solid #1f2a40;padding:36px 0}
+.strip{display:flex;gap:10px;overflow:auto;padding-bottom:6px}
+.strip img{width:320px;height:190px;object-fit:cover;border-radius:12px;border:1px solid #23324b}
+
+/* portfolio page */
+.slider{position:relative;display:grid;place-items:center;margin:22px 0}
+.slider img{width:100%;max-height:520px;object-fit:cover;border-radius:14px;border:1px solid #24334f}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0b1324;border:1px solid #274163;border-radius:10px;color:#e6edf3;width:42px;height:42px}
+#prev{left:8px}#next{right:8px}
+.shot{background:#0e1626;border:1px solid #1f2a40;border-radius:14px;overflow:hidden}
+.shot img{aspect-ratio:16/9;object-fit:cover}
+.shot figcaption{padding:10px 12px;color:var(--muted);font-size:.95rem}
+
+.footer{padding:28px 0;text-align:center;color:#9fb1c9}
