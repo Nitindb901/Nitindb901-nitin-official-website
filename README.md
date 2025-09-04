@@ -1,7 +1,10 @@
 # 🌐 Nitin Dubey — Data Analyst & Data Scientist
 
-Interactive portfolio with:
+Personal portfolio website showcasing my work, skills, and achievements in Data Analytics, Data Science, and Business Intelligence.  
 
+---
+
+## 🚀 Features
 - Profile photo (`profile.png`)
 - Animated background slideshow (dashboards)
 - Code rain animation (HTML, CSS, Python, R, SQL, DAX)
@@ -9,16 +12,8 @@ Interactive portfolio with:
 - Certificates view (`certificates.pdf`)
 - WhatsApp buttons (7772011682 & 8462011346)
 - LinkedIn link
+- Portfolio page with dashboard previews
 
 ---
 
-## 🚀 Live with GitHub Pages
-1. Push repo to GitHub.  
-2. Go to **Settings → Pages**.  
-3. Select **Branch = main** and **/ (root)**.  
-4. Save → Site will be live at:  
-   `https://your-username.github.io/your-repo-name`
-
----
-
-## 📂 Structure
+## 📂 Project Structure
