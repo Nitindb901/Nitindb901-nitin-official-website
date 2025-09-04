@@ -7,20 +7,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="./">ND</a>
       <nav class="links">
         <a href="./">Home</a>
         <a class="active" href="portfolio.html">Portfolio</a>
-        <a href="assets/resume.pdf" download>Download Resume</a>
-        <a href="assets/certificates.pdf" target="_blank">View Certificates</a>
+        <a href="resume.pdf" download>Download Resume</a>
+        <a href="certificates.pdf" target="_blank">View Certificates</a>
       </nav>
     </div>
   </header>
 
-  <section class="container">
-    <h1>Projects & Dashboards</h1>
+  <!-- HERO SLIDESHOW -->
+  <section class="hero">
+    <div class="slideshow-container">
+      <div class="mySlides fade"><img src="Image1.png" class="slide-img" alt="Portfolio Image 1"></div>
+      <div class="mySlides fade"><img src="Image2.png" class="slide-img" alt="Portfolio Image 2"></div>
+      <div class="mySlides fade"><img src="Image3.png" class="slide-img" alt="Portfolio Image 3"></div>
+      <div class="mySlides fade"><img src="Image4.png" class="slide-img" alt="Portfolio Image 4"></div>
+      <div class="mySlides fade"><img src="NItin dubey Proffessional photo FOR FIVVER.png" class="slide-img" alt="Professional Photo"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <h1>My Work Showcase</h1>
+      <p class="subtitle">Dashboards • Data Analytics • Visualization</p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD GRID -->
+  <section class="container about">
+    <h2>Dashboards & Projects</h2>
     <div class="grid-3">
       <figure class="shot"><img src="assets/projects/dashboard1.png" alt=""><figcaption>Retail KPI Overview</figcaption></figure>
       <figure class="shot"><img src="assets/projects/dashboard2.png" alt=""><figcaption>Segment vs Region</figcaption></figure>
@@ -32,5 +50,22 @@
   </section>
 
   <footer class="footer"><div class="container"><p>© 2025 Nitin Dubey</p></div></footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 3000); // Change image every 3 sec
+    }
+  </script>
 </body>
 </html>
