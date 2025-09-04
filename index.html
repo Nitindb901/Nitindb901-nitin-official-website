@@ -3,17 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nitin Dubey | Data Analyst & Data Scientist</title>
-  <meta name="description" content="Portfolio of Nitin Dubey — Data Analyst, Data Scientist & MIS Coordinator. Power BI, Tableau, Python, SQL, Dashboards." />
-  <link rel="stylesheet" href="style.css" />
+  <title>Nitin Dubey | Data Analyst & AI Specialist</title>
+  <style>
+    body, html {margin:0; padding:0; height:100%; font-family:sans-serif; background:#0b1220; color:white;}
+    .nav {position:sticky; top:0; background:rgba(0,0,0,0.6); padding:10px; z-index:10;}
+    .nav-inner {display:flex; justify-content:space-between; align-items:center; max-width:1100px; margin:auto;}
+    .brand {font-weight:bold; background:#7c3aed; padding:8px 12px; border-radius:6px; color:white; text-decoration:none;}
+    .links a {color:white; margin-left:15px; text-decoration:none;}
+    .hero {position:relative; min-height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden;}
+    .avatar {width:120px; height:120px; border-radius:50%; border:3px solid #fff; margin-bottom:15px;}
+    .cta a {display:inline-block; margin:5px; padding:10px 15px; border-radius:8px; text-decoration:none; color:white; background:#111827;}
+    .cta a.primary {background:linear-gradient(90deg,#7c3aed,#06b6d4);}
+    .cta a.whats {border:1px solid #2e7d32;}
+    .cta a.linkd {border:1px solid #0a66c2;}
+    footer {background:#111; padding:15px; text-align:center; color:#aaa;}
+
+    /* Slideshow */
+    .slideshow-container {position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden;}
+    .mySlides {display:none; height:100%;}
+    .slide-img {width:100%; height:100vh; object-fit:cover;}
+
+    /* Code Rain Canvas */
+    #codeRain {position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; mix-blend-mode:screen; opacity:0.4;}
+
+    /* Hero Inner */
+    .hero-inner {position:relative; z-index:2;}
+
+    /* Skills Scroll Banner */
+    .skills-scroll {position:absolute; bottom:10px; width:100%; overflow:hidden; background:rgba(0,0,0,0.6); z-index:3;}
+    .skills-scroll p {display:inline-block; white-space:nowrap; color:#22d3ee; font-weight:bold; animation:scrollText 20s linear infinite;}
+    @keyframes scrollText {0%{transform:translateX(100%);}100%{transform:translateX(-100%);}}
+  </style>
 </head>
 <body>
   <!-- NAV -->
   <header class="nav">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a class="brand" href="./">ND</a>
       <nav class="links">
-        <a href="./">Home</a>
+        <a class="active" href="./">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="resume.pdf" download>Download Resume</a>
         <a href="certificates.pdf" target="_blank">View Certificates</a>
@@ -21,66 +49,86 @@
     </div>
   </header>
 
-  <!-- HERO with slideshow -->
+  <!-- HERO -->
   <section class="hero">
+    <!-- Background Slideshow -->
     <div class="slideshow-container">
-      <div class="mySlides fade"><img src="Image1.png" class="slide-img" alt="Dashboard 1"></div>
-      <div class="mySlides fade"><img src="Image2.png" class="slide-img" alt="Dashboard 2"></div>
-      <div class="mySlides fade"><img src="Image3.png" class="slide-img" alt="Dashboard 3"></div>
-      <div class="mySlides fade"><img src="Image4.png" class="slide-img" alt="Dashboard 4"></div>
-      <div class="mySlides fade"><img src="NItin dubey Proffessional photo FOR FIVVER.png" class="slide-img" alt="Professional Photo"></div>
+      <div class="mySlides fade"><img src="Image1.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image2.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image3.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="Image4.png" class="slide-img"></div>
+      <div class="mySlides fade"><img src="NItin dubey Proffessional photo FOR FIVVER.png" class="slide-img"></div>
     </div>
 
-    <div class="container hero-inner">
-      <img class="avatar" src="profile.png" alt="Nitin Dubey profile photo" />
-      <h1>Hi, I’m <span>Nitin Dubey</span></h1>
-      <p class="subtitle">Data Analyst • Data Scientist • MIS Coordinator</p>
-      <p class="badges">
-        <span>HTML</span><span>CSS</span><span>Python</span><span>R</span>
-        <span>SQL</span><span>Power BI</span><span>Tableau</span>
-      </p>
+    <!-- Code Rain Layer -->
+    <canvas id="codeRain"></canvas>
+
+    <!-- Hero Content -->
+    <div class="hero-inner">
+      <img class="avatar" src="profile.png" alt="Profile">
+      <h1>Hi, I’m <span style="color:#22d3ee;">Nitin Dubey</span></h1>
+      <p>Data Analyst • Data Scientist • AI Developer</p>
       <div class="cta">
-        <a class="btn primary" href="resume.pdf" download>⬇️ Download Resume</a>
-        <a class="btn" href="certificates.pdf" target="_blank">📜 View Certificates</a>
-        <a class="btn whats" href="https://wa.me/7772011682">WhatsApp: 7772011682</a>
-        <a class="btn whats" href="https://wa.me/8462011346">WhatsApp: 8462011346</a>
-        <a class="btn linkd" href="https://www.linkedin.com/in/nitin-dubey-48249aa1" target="_blank">LinkedIn</a>
+        <a class="primary" href="resume.pdf" download>⬇️ Download Resume</a>
+        <a href="certificates.pdf" target="_blank">📜 View Certificates</a>
+        <a class="whats" href="https://wa.me/7772011682">WhatsApp: 7772011682</a>
+        <a class="whats" href="https://wa.me/8462011346">WhatsApp: 8462011346</a>
+        <a class="linkd" href="https://www.linkedin.com/in/nitin-dubey-48249aa1" target="_blank">LinkedIn</a>
       </div>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="container about">
-    <h2>About Me</h2>
-    <p>
-      Data-driven retail strategist with 10+ years of experience turning raw data into
-      business insights. I design interactive dashboards (Power BI & Tableau), build
-      analytics in Python/R, automate MIS reporting, and help teams take action fast.
-    </p>
-    <div class="grid-3">
-      <div class="card"><h3>Dashboards</h3><p>Power BI, Tableau, KPI tracking, Sales & Inventory.</p></div>
-      <div class="card"><h3>Analytics</h3><p>Python, SQL, Forecasting, Segmentation.</p></div>
-      <div class="card"><h3>Automation</h3><p>Power Query, ETL, AI-powered reporting.</p></div>
+    <!-- Skills Scroll Banner -->
+    <div class="skills-scroll">
+      <p>🌐 Website Development • 📱 App Development • 🤖 AI Tools • 📊 Data Science • ⚡ Power BI • 📈 Tableau • 🔮 Machine Learning • 🛠️ Automation</p>
     </div>
   </section>
 
-  <footer class="footer"><div class="container"><p>© 2025 Nitin Dubey</p></div></footer>
+  <footer><p>© 2025 Nitin Dubey</p></footer>
 
-  <!-- Slideshow Script -->
+  <!-- JS for Slideshow -->
   <script>
     let slideIndex = 0;
     showSlides();
-
     function showSlides() {
       let slides = document.getElementsByClassName("mySlides");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
+      for (let i = 0; i < slides.length; i++) {slides[i].style.display = "none";}
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3000); // Change image every 3 sec
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
     }
+  </script>
+
+  <!-- JS for Code Rain -->
+  <script>
+    const canvas = document.getElementById("codeRain");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const keywords = ["HTML","CSS","Python","R","SQL","Power Query","AI","Apps","Automation"];
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#22d3ee";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = keywords[Math.floor(Math.random() * keywords.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 80);
+
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
   </script>
 </body>
 </html>
