@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Insights | Nitin Dubey</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      background: #0b1220; 
+      color: #e6edf3;
+      min-height: 100vh;
+    }
+    .nav { 
+      position: sticky; 
+      top: 0; 
+      background: rgba(0,0,0,0.8); 
+      backdrop-filter: blur(10px);
+      padding: 12px 0; 
+      z-index: 100; 
+      border-bottom: 1px solid #1f2a40;
+    }
+    .nav-inner { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      padding: 0 20px;
+    }
+    .brand { 
+      font-weight: bold; 
+      background: linear-gradient(135deg, #7c3aed, #3b82f6); 
+      padding: 10px 16px; 
+      border-radius: 8px; 
+      color: white; 
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .links a { 
+      color: #9da7b3; 
+      margin-left: 20px; 
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .links a:hover, .links a.active { color: white; }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      background: linear-gradient(90deg, #a78bfa, #22d3ee);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .insight-card {
+      background: linear-gradient(135deg, #1a2332 0%, #0e1626 100%);
+      border: 1px solid #2b3b56;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    
+    .insight-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .insight-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #7c3aed, #06b6d4);
+    }
+    
+    .insight-text {
+      font-size: 18px;
+      line-height: 1.6;
+      padding-left: 15px;
+    }
+    
+    .timestamp {
+      text-align: center;
+      color: #9da7b3;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      color: #9da7b3;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 28px; }
+      .insight-text { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="./">ND</a>
+      <nav class="links">
+        <a href="./">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="dashboard_interactive.html">Interactive Dashboard</a>
+        <a class="active" href="insights.html">Insights</a>
+        <a href="resume.pdf" download>Resume</a>
+        <a href="certificates.pdf" target="_blank">Certificates</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>🧠 Automated Business Insights</h1>
+    <p style="text-align: center; color: #9da7b3; margin-bottom: 40px;">
+      AI-powered analysis of your business data
+    </p>
+    
+    <div class="insight-card">
+      <div class="insight-text">💰 Total revenue generated: $50,913,728.23 with average transaction value of $5,091.37</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">🏆 Top performing category: Home & Kitchen with $12,049,985.47 in revenue (23.7% of total)</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">🌍 Best performing region: North region contributing $10,622,926.70</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">⚠️ Inventory Alert: 169 products with low stock, 3 products out of stock</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">📊 Overall profit margin: 21.44% with total profit of $10,913,382.87</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">📈 Sales trend: Revenue is increasing by 20.9% compared to previous month</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">🏅 Leading brand: BrandC with $15,579,145.26 in sales</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-text">📅 Peak sales day: Sunday with average revenue of $5,241.54</div>
+    </div>
+    
+    <div class="timestamp">
+      Generated on November 15, 2025 at 08:26 PM
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Nitin Dubey | Automated Business Intelligence</p>
+  </footer>
+</body>
+</html>
